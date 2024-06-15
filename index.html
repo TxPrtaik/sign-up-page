@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+    #s1{
+    background-image:url('https://wallpapercave.com/wp/wp8319432.jpg'),linear-gradient(hsla(0,100%,0%,0.5),hsla(0,100%,0%,0.5));
+    
+       background-size: cover;
+       position: relative; 
+       background-position: center center; 
+ 
+       border-radius: 8px 0px 0px 8px  ;
+      transition: border-radius 1s;
+      height: 480px;
+
+}
+#or{
+    font-size: 14px;
+    position: relative;
+    color: gray;
+    margin-top: 10px;
+}
+#signup{
+transition: display 1s;
+}
+#or::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 153px;
+    bottom: 7px;
+   height: 1px;
+   left: -160px;
+   background-color: lightgray;
+}
+#or::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 153px;
+    bottom: 7px;
+   height: 1px;
+   right: -160px;
+   background-color: lightgray;
+}
+</style>
+</head>
+<body>
+<section class="container mt-5">
+<div class="row justify-content-center align-item-center pt-5" >
+    <div class="col-md-8 bg-light shadow">
+    <div class="row">
+        <div class="p-3 col-md-6 z-3  text-light" id="s1">
+          <div id="content-box-1">
+            <h2>HEY,GAMER</h2>
+          <h2>START YOUR NEW JOURNEY</h2>
+          <h2>HERE..!</h2>
+        </div>
+        <div id="content-box-2" style="display: none;">
+            <h2>WELCOME BACK,GAMER</h2>
+          <h2>START YOUR JOURNEY</h2>
+          <h2>AGAIN..!</h2>
+        </div>
+        </div>
+
+        <div class="p-3 ps-4 pe-4 col-md-6  z-0 rounded-end text-center position-relative" id="s2" >
+          <div class="p-0" id="signup"  >
+            <h3>Sign up</h3>
+          <input type="text" class="w-100 border-0 p-2 border-bottom bg-light mt-3 outline-0" placeholder="Full Name">
+          <input type="text" class="w-100 border-0 p-2 border-bottom bg-light mt-3 outline-0" placeholder="Phone">
+          <input type="text" class="w-100 border-0 p-2 border-bottom bg-light mt-3 outline-0" placeholder="Password">
+          <textarea class="w-100 border-0 p-2 border-bottom bg-light mt-3 outline-0" placeholder="Your Address"></textarea>
+          <button type="submit" class="btn btn-dark rounded-0 w-100 mt-4" >Sign Up</button>
+          <div class="p-0 mt-3"  >
+          <font id="or">OR</font><br>
+          <button type="submit" class="btn btn-success  mt-2" onclick="change()" id="mybtn">Already have account?Login</button>
+        </div>
+        </div>
+        <div class="p-0" id="login" style="display: none;">
+            <h3>Login</h3>
+            <input type="text" class="w-100 border-0 p-2 border-bottom bg-light mt-5 outline-0" placeholder="Mobile">
+            <input type="text" class="w-100 border-0 p-2 border-bottom bg-light mt-4 outline-0" placeholder="Password">
+            <button type="submit" class="btn btn-dark rounded-0 w-100 mt-5" >Login</button>
+            <div class="p-0 mt-5" >
+                
+                <font id="or">OR</font><br>
+                <button type="submit" class="btn btn-success  mt-4" onclick="change()" id="mybtn">New user? Sign Up</button>
+              </div>
+        </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+
+    <script>
+        let cond=true;
+ function change(){
+         if(cond==true){
+            $("#s2").animate({"right":"380px"},1000);
+            $("#s1").animate({"left":"380px"},1000);
+            $("#s1").css({"border-radius":"0px 8px 8px 0px"},1000)
+           
+            $("#signup").css({"display":"none"});
+            $("#login").css({"display":"block"});
+            $("#content-box-1").css({"display":"none"});
+            $("#content-box-2").css({"display":"block"});
+          cond=false; 
+        }
+        else{
+            $("#s2").animate({"right":"0px"},1000);
+            $("#s1").animate({"left":"0px","border-radius":"0px 8px 8px 0px"},1000);
+            $("#s1").css({"border-radius":"8px 0px 0px 8px"})
+           
+            $("#signup").css({"display":"block"});
+            $("#login").css({"display":"none"});
+            $("#content-box-1").css({"display":"block"});
+            $("#content-box-2").css({"display":"none"});
+          cond=true; 
+        }
+           }
+        $(document).ready(()=>{
+          
+
+        })
+    </script>
+</body>
+</html>
